@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+<html>
+<head>
+    <title>Gndec Ludhiana</title>
+</head>
+{% block content %}
+<body>
+<br/>
+<br/><br/>
+<table border="2">
+<caption><center><b> Detail </b> </center></caption>
+	<tr>
+		<td>Proforma No. : {{pro_no}}</td>
+	</tr>
+	<tr>
+		<td>Name and Address :  {{name}}, {{address}}</td>
+	</tr>
+	<tr>
+		<td>Charges for : {{charges_for}}</td>
+	</tr>
+	<tr>
+		<td>Refrence No : {{refrence_no}}</td>
+	</tr>
+	<tr>
+		<td>Rate  : {{rate}}</td>
+	<tr>
+		<td>Sample  : {{sample}}</td>
+	<tr>
+		<td>Amount  : {{amount}}</td>
+	<tr>
+		<td>Transpotation: {{transpotation}}</td>
+	</tr>
+	<tr>
+		<td><center><a href="{{ LOCAL_URL }}/tcc11_12/automation/proformabillreport/?pro_no={{ pro_no }}" target="window"><b> REPORT</b></a></center>  </td>
+		<td><center><a href="{{ LOCAL_URL }}/tcc11_12/automation/probill/?pro_no={{ pro_no }}" target="window"><b> Bill</b></a></center></td>
+	</tr>
+	
+</table>
+
+
+</body>
+{% endblock %}

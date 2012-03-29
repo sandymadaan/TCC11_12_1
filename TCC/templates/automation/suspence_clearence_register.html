@@ -1,0 +1,87 @@
+<html>
+<head>
+    <title>Suspence Clearence Register</title>
+</head>
+<body>
+<div align="center"><h2>{{ title.name }}</h2></div>
+<div align="center"> Suspence Clearence Register of {{start_day}}-{{start_year}} to {{end_day}}-{{end_month}}-{{end_year}} 
+<table border='1'>
+	<tr>
+		<td>job.No </td>
+		<td>Date</td>
+		<td>Receipt</td>
+		<td>Address</td>
+		<td>Type of Material</td>
+		<td>College Income {{collegeincome }}%</td>
+		<td>Admin Charges {{admincharge}}%</td>
+		<td>Consultancy</td>
+		<td>Dev. Fund</td>
+                <td>Work charges</td>
+                <td>TA/DA of staff</td>
+                <td>Other charges</td>
+                <td>Boring charges internal</td>
+		<td>Service Tax ( {{ servicetaxprint }} %)</td>
+		<td>Edu. Tax ( {{ educationtaxprint }} %)</td>
+		<td>H. Edu. Tax ( {{ highereducationtaxprint }} %)</td>
+		<td>TDS</td>
+		<td>Total</td>
+	</tr>
+
+{% if client %}
+    {% for clients in client %}
+    {% for amounts in amount %}
+    {% for suspences in suspence %}
+         {% if clients.job_no == amounts.job_no %}
+         {% if clients.job_no == suspences.job_no %}
+         <tr>
+                        
+			<td>{{ clients.job_no}}</td> 
+			<td> {{ clients.date }}</td>
+			<td> {{ clients.receipt_no }}</td>
+			<td> {{clients.name_and_address}}</td>
+			<td>{{amounts.field}}</td>
+			<td>{{amounts.college_income}}</td>
+			<td>{{amounts.admin_charge}}</td>
+			<td>{{amounts.consultancy_asst}}</td>
+			<td>{{amounts.development_fund}}</td>
+                        <td>{{suspences.work_charge}}
+                        <td> </td>
+                        <td> </td>
+                        <td>{{suspences.boring_charge_internal}}</td>
+			<td>{{amounts.service_tax}}</td>
+			<td>{{amounts.education_tax}}</td>
+			<td>{{amounts.higher_education_tax}}</td>			
+			<td>{{amounts.tds}}</td>
+			<td>{{amounts.balance}}</td>
+		{% endif  %}
+                {% endif %}	
+		</tr>
+         {% endfor %}
+        {% endfor %}
+        {% endfor %}
+{% endif  %}
+		<tr>
+			<td><b>  </b></td>
+			<td><b> </b></td>
+			 <td><b></b></td>
+			<td><b>  </b></td>
+			<td><b> </b></td>
+			<td><b> {{college_income}} </b></td>
+	         <td><b>{{admin_charge}}</b></td>
+	        <td><b>	{{consultancy_asst}} </b></td>
+	        <td><b> {{development_fund}}</b></td>
+                <td><b> </b></td>
+              <td><b> </b></td>
+               <td><b> </b></td>
+               <td><b> </b></td>
+	         <td><b> {{service_tax}} </b></td>
+	        <td><b>{{education_tax}}  </b></td>
+	         <td><b>{{higher_education_tax}}	 </b></td>
+	         <td><b>{{tds}} </b></td>
+	         <td><b>{{balance}} </b></td>
+	</tr>	
+</table>
+</div>
+
+
+</body>

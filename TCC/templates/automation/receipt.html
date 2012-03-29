@@ -1,0 +1,21 @@
+{% extends "all.html" %}
+{% load i18n %}
+<html>
+<head><title>Receipt</title></head>
+<center><h3><b>RECEIPT</h3>  </b></center>
+<br/>
+
+
+<div align="left"> Receipt No. : {{client.receipt_no }}</div>
+<div align="right"> Dated : {{ client.date }}</div>
+<br/><br/><br/>
+<div align="left">Received a sum of Rs. {{ cdftotal }} {{ amount.balance }} (Rupees  {{ net_total_eng }}only) from  <i> {{ client.name_and_address }} by {{ type }} {{suspence.type}} {{ suspence.check_number}}
+ {{suspence.check_dd_date }} on account of {{amount.field}}</div>
+<br/><br/>
+<div align="right"><b> Cashier</b></div>
+<br>
+<br>
+</body>
+</html>
+
+

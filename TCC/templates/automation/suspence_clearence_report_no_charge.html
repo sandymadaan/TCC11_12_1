@@ -1,0 +1,108 @@
+<html>
+<head><title>Suspence Clearence Report (Without Charge)</title></head>
+<body><center>{{ title.name }}<br>({{ sub_title.name}}) </center>
+<br/>
+<div style='position:absolute;left:7px;top:55px;'>Voucher No : ____________ </div> 
+<div style='position:absolute;right:7px;top:55px;'>Main/Mat. No :<u>{{ job_no }}</u> </div>
+<div style='position:absolute;left:7px;top:75px;'>Dated : ____________ </div>
+<div style='position:absolute;right:7px;top:75px;'>Dated : ____________ </div>
+<div style='position:absolute;left:7px;top:105px;'>Director,</div>
+<br/> <br/><br/><br/>
+<div style='position:absolute;left:7px;top:125px;'>
+Received a sum of Rs. {{amount.balance }}/- ( {{ net_balance_eng }} only ) <br/><br/>
+Vide {{suspence.type}} {{suspence.check_number}}, {{suspence.check_dd_date}} from : {{ client.name_and_address }} <br/>
+Vide bill No. : GNDEC/TCC/B/{{job_no}}    Dated : {{ client.date }}<br/>
+On account of : {{ amount.field }} Vide Receipt No. : {{client.receipt_no }}	Dated: {{ client.date }} <br><br>
+Nature of Consultancy :{{ client.type_of_consultancy }},  Ratio {{ ratio1 }}:{{ ratio2 }} </div>
+<br/><br/><br/><br/><br><br><br>
+<div>
+<table border='1' width='100%'>
+<tr>
+	<td colspan='2'>THE DISTRIBUTION MAY BE MADE AS</td>
+	<td >Date of Testing</td>
+	
+</tr>
+<tr>
+	<td rowspan='15'>CREDITS</td>
+	<td>COLLEGE INCOME {{ collegeincome }}% </td>
+	<td width='15%' rowspan='15'>{{transport.test_date}}</td>
+	<td  align='right'>{{ amount.college_income }}.00</td>
+</tr>
+<tr>
+	<td>ADMN. CHARGES {{ admincharge }}% </td>
+	
+	<td  align='right'>{{ amount.admin_charge }}.00</td>
+</tr>
+<tr>
+	<td>CONSULTANCY ASST.(CONSULTANCY) </td>
+	<td  align='right'>{{ amount.consultancy_asst }}.00</td>
+</tr>
+<tr>
+	<td>DEV. FUND (CONSULTANCY) </td>
+	<td  align='right'>{{ amount.development_fund }}.00</td>
+</tr>
+<tr>
+	<td>TOTAL</td>
+	<td  align='right'>{{ amount.total }}.00</td>
+</tr>
+<tr>
+	<td>SERVICE TAX  @ {{ servicetaxprint }}% </td>
+	<td  align='right'>{{ amount.service_tax }}.00</td>
+<tr>
+	<td>EDUCATION TAX  @ {{ educationtaxprint }}% </td>
+	<td  align='right'>{{ amount.education_tax }}.00</td>
+</tr>
+<tr>
+	<td>HIGHER EDUCATION TAX  @ {{ highereducationtaxprint }}% </td>
+	<td  align='right'>{{ amount.higher_education_tax }}.00</td>
+</tr>
+<tr>
+	<td>TOTAL </td>
+	<td  align='right'>{{amount.net_total}}.00</td>
+</tr>
+<tr>
+	<td>TDS (Rs.) </td>
+	<td  align='right' >{{amount.tds}}.00</td>
+</tr>
+<tr>
+	<td>(Rs.) </td>
+	<td  align='right'>{{ amount.balance }}.00</td>
+</tr>
+</table>
+</div>
+<br>
+<br>
+<div>
+<table border='1' >
+<tr>
+	<td>FIELD TESTING STAFF</td>
+	<td>LAB TESTING STAFF</td>
+</tr>
+<tr><td>{{suspence.field_testing_staff}}</td>
+	<td>{{suspence.lab_testing_staff}}</td>
+</tr>
+</table>
+THE WORK HAS BEEN EXECUTED BY ABOVE PERSONS AS MENTIONED ABOVE. </div>
+<br>
+<div align= 'left'>Voucher No : ____________ </div> 
+<div align= 'left'>Dated : ____________ 
+<br><br><br>(Supdt. Accounts)<br><br><br>Account Clerk (Consultancy)<div align='right'>DEAN {{ sign.name}}</div>
+
+<table border='1' >
+<tr>
+	<TD>Code</TD>
+	<TD>NAME OF EMPLOYEES</TD>
+	<TD>DESIGNATION</TD>
+</tr>
+{% if teachers  %}
+    {% for part in teachers %}
+<tr>
+	<TD>{{part.code}}</TD>
+	<TD> {{ part.name }}</TD>
+	<td> {{ part.position }}</TD>
+</tr>
+	{% endfor %}
+{% endif %}
+</TABLE>
+</body>
+</html>

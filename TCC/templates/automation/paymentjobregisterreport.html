@@ -1,0 +1,41 @@
+<html>
+<head>
+    <title>Payment Job Register</title>
+</head>
+<body>
+<div align="center"><h2>{{ title.name }}</h2><br>Payment Job Register of {{month}}, {{year}}</div>
+<div>
+<table border="1" width="100%">
+	<tr>
+		<td>Job. No </td>
+		<td>Date</td>
+		<td>Letter No</td>
+		<td>Letter Date</td></td>
+		<td>Address </td>
+		<td>Phone No</td>
+		<td>Subject</td>
+		<td>File Disposal</td>
+	</tr>
+{% if jobregister %}
+    {% for jobregisters in jobregister %}
+    {% for amounts in amount %}
+    {% if jobregisters.job_no == amounts.job_no %}
+         <tr>
+			<td>{{ jobregisters.job_no }}</td> 
+			<td>{{ jobregisters.date }}</td>
+			<td>{{ jobregisters.letter_no }}</td>
+			<td>{{ jobregisters.letter_date }}</td>
+			<td>{{ jobregisters.name_and_address }}</td>
+			<td>{{ jobregisters.phone_no }}</td>
+			<td>{{ amounts.field }}</td>
+                        <td>{{ jobregisters.material_type }}</td>
+			<td>{{ jobregisters.file_disposal }}</td>
+			{% endif  %}
+			</tr>
+    {% endfor %}
+    {% endfor %}
+{% endif  %}
+</table>
+</div>
+
+</body>

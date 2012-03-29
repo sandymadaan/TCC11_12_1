@@ -1,0 +1,22 @@
+
+{% extends "base.html" %}
+{% load i18n %}
+
+<html>
+<head>
+    <title>GURU NANAK DEV ENGINNER COLLEGE LUDHIANA</title>
+</head>
+{% block content %}
+<body> 
+ <h3>Thanks for Adding job no. : {{ maxid }} </h3>
+ <br/><br/>
+ <table>
+ <caption><center><b>REPORTS</center></caption>	
+	 <tr>
+		<td><b><a href="{{ LOCAL_URL }}/tcc11_12/automation/suspence/?job_no={{ maxid }}" target="window">REPORT</a> </td>
+		 <td><b><a href="{{ LOCAL_URL }}/tcc11_12/automation/bill/?job_no={{ maxid }}" target="window">BILL</a> </td>
+		<td><b><a href="{{ LOCAL_URL }}/tcc11_12/automation/receipt_suspence/?job_no={{ maxid }}"target="window">RECEIPT</a> </td>
+	 </tr>
+ </table>
+</body>
+{% endblock %}

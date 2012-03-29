@@ -1,0 +1,43 @@
+</head>
+<body>
+<div align="center"><h2>{{ title.name }}</h2></div>
+<div>Daily Report Of {{start_date}} to {{end_date}} for cheque/DD/Online/cash payment
+<table border='1' width='100%'>
+	<tr>
+		<td><b>Receipt No.</b></td>
+		<td><b>Date</b></td>
+		<td><b>Name of Parties</b></td>
+                <td><b>TDS</b></td>
+		<td><b>Balance</b></td>
+	</tr>
+{% if client %}
+    {% for clients in client %}
+    {% for amounts in amount %}
+    {% for suspences in suspence %}
+         {% if clients.job_no == amounts.job_no %}
+         {% if clients.job_no == suspences.job_no %}
+      
+         <tr>
+			<td>{{ clients.receipt_no }}</td>
+			<td> {{ clients.date }}</td>
+			<td> {{clients.name_and_address}}</td>
+                        <td ALIGN="right">{{amounts.tds}}</td>
+		        <td ALIGN="right">{{amounts.balance}}</td>
+		{% endif  %}	
+                {% endif  %} 
+		</tr>
+        {% endfor %}
+        {% endfor %}
+        {% endfor %}
+{% endif  %}
+	<tr>
+         <td colspan='3'><b><center>SUM</center></td>
+         <td ALIGN="right"><b>{{tds}}</td>
+         <td ALIGN="right"><b>{{balance}}</td>
+        </tr>
+     
+</table>
+<br></br></br></br>
+</div>
+
+</body>

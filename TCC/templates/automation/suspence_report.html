@@ -1,0 +1,48 @@
+<html>
+<head><title>Report</title></head>
+<br/>
+
+<div align="right">Suspence No. : {{ job_no }}/<br> Date : {{ client.date }}</div>
+<div align="left">Director,</div>
+<br/><br/>
+
+<div>A sum of Rs. {{amount.balance }}/-(Rupees {{ net_total_eng }} only) has been depsoited by :{{ client.name_and_address }} vide {{suspence.type }}  {{suspence.check_number }} , {{ suspence.check_dd_date }} on account of : {{ amount.field }} testing Charges. This amount kept in suspence till clearence.<br><br>
+Receipt No. : {{client.receipt_no }} <br>
+Dated: {{ client.date }} </div>
+<br/><br/><br/>
+
+<div align= "left">
+	<table border="1" width="100%">
+		<tr>
+			<td>Bill Amount</td>
+			<td  align="right">{{ amount.total }}.00</td>
+		</tr>
+		<tr>
+			<td>Service tax  @ {{ servicetaxprint }}% </td>
+			<td  align="right">{{ amount.service_tax }}.00</td>
+		<tr>
+			<td>Education Cess  @ {{ educationtaxprint }}% </td>
+			<td  align="right">{{ amount.education_tax }}.00</td>
+		</tr>
+		<tr>
+			<td>Higher Education Cess  @ {{ highereducationtaxprint }}% </td>
+			<td  align="right">{{ amount.higher_education_tax }}.00</td>
+		</tr>
+		<tr>
+			<td>Total Amount </td>
+			<td  align="right">{{ amount.net_total }}.00</td>
+		</tr>	
+		<tr>
+			<TD>TDS</TD>
+			<TD align="right">{{ amount.tds }}.00</TD>
+		<tr>
+			<TD>Balance</TD>
+			<TD align="right"> {{ amount.balance }}.00</TD>
+		</tr>
+	</table>
+</div>
+<br/><br/><br/><br/>
+<div align="right">DEAN {{ sign.name}}</div>
+</body>
+
+

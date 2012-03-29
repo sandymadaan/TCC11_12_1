@@ -1,0 +1,52 @@
+<html>
+<head>
+    <title>Old Client</title>
+</head>
+<body>
+<div align="center"><h2>{{ title.name }}</h2></div>
+
+
+<div>List of all works of <b> {{name_and_address }}</b>
+<table border='1' width='100%'>
+	<tr>
+		<td><b>Receipt No.</b></td>
+		<td><b>Date</b></td>
+                <td><b>Total</b></td>
+		<td><b>Net_total</b></td> 
+	</tr>
+
+            <tr>
+{% if client %}
+    {% for clients in client %}
+    {% for amounts in amount %}
+  
+         {% if clients.job_no == amounts.job_no %}
+       
+         {% if clients.name_and_address == clients.name_and_address %}
+  
+			<td>{{ clients.receipt_no }}</td>
+			<td> {{ clients.date }}</td>
+                        <td ALIGN="right">{{amounts.total}}</td>
+		        <td ALIGN="right">{{amounts.net_total}}</td>
+		{% endif  %}	
+              
+                {% endif  %} 
+		</tr>
+        {% endfor %}
+       
+        {% endfor %}
+<tr>
+         <td colspan='2'><b><center>SUM</center></td>
+
+
+         <td ALIGN="right"><b>{{total}}</td>
+         <td ALIGN="right"><b>{{net_total}}</td>
+    
+        </tr>
+{% endif  %}    
+</table>
+<br></br></br></br>
+</div>
+
+
+</body>

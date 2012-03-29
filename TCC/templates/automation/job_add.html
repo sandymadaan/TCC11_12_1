@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+{% load i18n %}
+<html>
+<head>
+    <title>GNDEC LUDHIANA</title>
+</head>
+{% block content %}
+<h3>JOB NO. : {{ maxid }} </h3>
+<br>
+    {% if form.errors %}
+        <p style="color: red;">
+            Please correct the error{{ form.errors|pluralize }} below.
+        </p>
+    {% endif %}
+
+    <form action="" method="post">
+	{% csrf_token %}
+        <table>
+			<table>
+			<tr><th><label for="id_lab">Lab:</label></th><td><select name="lab" id="id_lab">
+<option value="" selected="selected">---------</option>
+<option value="SOM">SOM</option>
+<option value="SOIL">SOIL</option>
+<option value="ST.D DESIGN">ST.D DESIGN</option>
+<option value="CET">CET</option>
+<option value="ELECTRONIC">ELECTRONIC</option>
+<option value="IT &amp; COMPUTER">IT &amp; COMPUTER</option>
+<option value="ELECTRICAL">ELECTRICAL</option>
+<option value="CIVIL">CIVIL</option>
+<option value="MECH">MECH</option>
+<option value="MBA">MBA</option>
+<option value="MCA">MCA</option>
+<option value="WORKSHOP">WORKSHOP</option>
+<option value="CHEMICAL">CHEMICAL</option>
+<option value="SURVEY">SURVEY</option>
+<option value="ENVIRONMENT">ENVIRONMENT</option>
+<option value="OTHER">OTHER</option>
+</select></td></tr>
+
+            <tr><th><label for="id_field">Field:</label></th><td><select name="field" id="id_field">
+<option value="" selected="selected">---------</option>
+<option value="CEMENT">CEMENT</option>
+<option value="STEEL">STEEL</option>
+<option value="BRICKS">BRICKS</option>
+<option value="MIX DESIGN">MIX DESIGN</option>
+<option value="CUBES">CUBES</option>
+<option value="PAVER">PAVER</option>
+<option value="BM/PC">BM/PC</option>
+<option value="PC">PC</option>
+<option value="TILES">TILES</option>
+<option value="BM">BM</option>
+<option value="BITUMAN">BITUMAN</option>
+<option value="PC">PC</option>
+<option value="WOOD">WOOD</option>
+<option value="CONCRETE PAVERS">CONCRETE PAVERS</option>
+<option value="SOIL/SAND">SOIL/SAND</option>
+<option value="SOIL SAMPLES">SOIL SAMPLES</option>
+<option value="COARSE AGGREGATES">COARSE AGGREGATES</option>
+<option value="OHSRS">OHSRS</option>
+<option value="SOIL FOR BC">SOIL FOR BC</option>
+<option value="SURVEY">SURVEY</option>
+<option value="SAND">SAND</option>
+<option value="FINE AGGREGATES">FINE AGGREGATES</option>
+<option value="COARSE &amp; FINE AGGREGATES">COARSE &amp; FINE AGGREGATES</option>
+<option value="C. AGG. &amp; F. AGG(DEL. MATERIAL)">C. AGG. &amp; F. AGG(DEL. MATERIAL)</option>
+<option value="C. AGG. (DEL. MATERIAL)">C. AGG. (DEL. MATERIAL)</option>
+<option value="F. AGG. (DEL. MATERIAL)">F. AGG. (DEL. MATERIAL)</option>
+<option value="ST.D (OHSR)">ST.D (OHSR)</option>
+<option value="HAMMER">HAMMER</option>
+<option value="ST.D (BUILDING)">ST.D (BUILDING)</option>
+<option value="ST.D (BRIDGE)">ST.D (BRIDGE)</option>
+<option value="DRINKING WATER">DRINKING WATER</option>
+<option value="SEWAGE">SEWAGE</option>
+<option value="CABLE TESTING">CABLE TESTING</option>
+<option value="METER TESTING">METER TESTING</option>
+<option value="MOTOR TESTING">MOTOR TESTING</option>
+<option value="6 WEEK TRAINING">6 WEEK TRAINING</option>
+<option value="2 WEEK TRAINING">2 WEEK TRAINING</option>
+<option value="6 MONTH TRAINING">6 MONTH TRAINING</option>
+<option value="CRASH COURSE">CRASH COURSE</option>
+<option value="PRACTICAL">PRACTICAL</option>
+<option value="DESIGN">DESIGN</option>
+<option value="DRAWING &amp; DESIGN CHECKING">DRAWING &amp; DESIGN CHECKING</option>
+<option value="DESIGN CHECKING">DESIGN CHECKING</option>
+<option value="BRIDGE AND CULVETRS">BRIDGE AND CULVETRS</option>
+<option value="BUILDINGS">BUILDINGS</option>
+<option value="WATER AND SEWAGE">WATER AND SEWAGE</option>
+<option value="OTHER">OTHER</option>
+</select></td></tr>
+			<tr><th><label for="id_other_field"> Other Field (only fill if your field is not in field options)</label></th><td><input type="text" name="other_field" id="id_other_field"  /></td></tr>
+			<tr><th><label for="id_tds"> T.D.S</label></th><td><input type="text" name="tds" id="id_tds" value="0" /></td></tr>
+            <tr><th><label for="id_total">Total Amount</label></th><td><input type="text" name="total" id="id_total" /></td></tr>
+            <tr><th><label for="id_type">Payment Type:</label></th><td><select name="type" id="id_type">
+				<option value="CASH" selected="selected">CASH</option>
+</select></td></tr>
+
+        </table>
+        <input type="submit" value="Submit">
+    </form>
+
+</html>
+{% endblock %}

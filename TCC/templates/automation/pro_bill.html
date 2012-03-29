@@ -1,0 +1,51 @@
+<html>
+<head><title>Report</title></head>
+<div align='right'>STC No. G31843A(S)LDH -ST-001<br>PAN No. AAATN1978L</div>
+<br>
+<body><center>{{ sub_title.name}}<br>{{ title.name }}<br>Accredited by NBA(AICTE),New Delhi <br>BILL  </center>
+<br/>
+
+<div align="left">No. : GNDEC/TCC/B/{{ pro_no }}/</div>
+<div align="right"> Dated : {{ proforma_bill.date}}</div>
+<br/><br/>
+<div align="left">TO <br> {{proforma_bill.name}}<br>{{proforma_bill.address}}</div>
+
+<br/><br/>
+
+<div align= "left">
+	<table border="1" width="100%">
+		<tr>
+			<td>Details</td>
+			<td>Per. </td>
+			<td>Rate</td>
+			<td>Amount</td>
+		</tr>
+		<tr>
+			<td>Charges For {{ proforma_bill.charges_for }}</td>
+			<td rowspan="6"></td>
+			<td rowspan="6"></td>
+			<td align="right" rowspan="2">{{ proforma_bill.amount }}.00</td>
+		</tr>
+		<tr>
+			<td>Site : {{ proforma_bill.site }}</td>
+		</tr>
+		<tr>
+			<td>Service tax  @ {{ servicetaxprint }}% </td>
+			<td  align="right">{{ proforma_tax.service_tax}}.00</td>
+		<tr>
+			<td>Education cess  @ {{ educationtaxprint }}% </td>
+			<td  align="right">{{ proforma_tax.education_tax }}.00</td>
+		</tr>
+		<tr>
+			<td>Higher Education cess  @ {{ highereducationtaxprint }}% </td>
+			<td  align="right">{{ proforma_tax.higher_education_tax }}.00</td>
+		</tr>
+		<tr>
+			<td>Total Rs.  ( {{ net_total_eng }} ) </td>
+			<td  align="right">{{ proforma_tax.total }}.00</td>
+		</tr>	
+	</table>
+<br/><br/><br/><br/><br/>
+<div align="right">DEAN {{ sub_title.name}}</div>
+</body>
+</html>
