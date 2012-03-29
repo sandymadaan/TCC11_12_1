@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+<html>
+<head>
+    <title>Gndec Ludhiana</title>
+</head>
+{% block content %}
+<body>
+<br/><br/>
+<table border="2">
+<caption><center><b> TA/DA Bill </b> </center></caption>
+	<tr>
+		<td>  Job No. : {{job_no}}</td>
+	<tr>
+		<td> Date of Testing : {{test_date}}</td>
+	<tr>
+		<td>Reach Site : {{reach_site}}</td>
+	<tr>
+		<td><center><a href="{{ LOCAL_URL }}/tcc11_12/automation/tadabill/?job_no={{job_no}}&test_date={{test_date}}" target="window"><b> Transport Bill</b></a></center>  </td>
+		
+	</tr>
+	
+</table>
+
+
+</body>
+{% endblock %}

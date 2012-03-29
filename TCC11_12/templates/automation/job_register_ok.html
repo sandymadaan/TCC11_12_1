@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+<html>
+<head>
+    <title>Gndec Ludhiana</title>
+</head>
+{% block content %}
+<body>
+<br/>
+<br/><br/>
+<table border="2">
+<caption><center><h3>JOB NO. {{maxid}} </h3> </center></caption>
+	<tr>
+		<td>Name and Address :  {{name}}</td>
+	</tr>
+	<tr>
+		<td>Letter No : {{letter_no}}</td>
+	</tr>
+	<tr>
+		<td>Letter Date : {{letter_date}}</td>
+	</tr>
+	<tr>
+		<td>Material Type : {{material_type}}</td>
+	</tr>
+	<tr>
+		<td>File Disposal: {{file_disposal}}</td>
+	</tr>
+	<tr>
+		<td><center><a href="{{ LOCAL_URL }}/tcc11_12/automation/nonpaymentjobregisterreport/" target="window"><b> JOB REGISTER REPORT</b></a></center>  </td>
+		<td><center><a href="{{ LOCAL_URL }}/tcc11_12/automation/nonpaymentjobregister" ><b> ADD NEW</b></a></center>  </td>
+	</tr>
+	
+</table>
+
+
+</body>
+{% endblock %}

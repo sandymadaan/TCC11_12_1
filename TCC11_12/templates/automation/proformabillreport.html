@@ -1,0 +1,78 @@
+<html>
+<head>
+    <title>Proforma Bill</title>
+</head>
+<body>
+<div align="center">{{ sub_title.name }}<br>{{title.name}} <br> Accredited by NBA(AICTE),New Delhi <br>PROFORMA BILL </div>
+<div align="left">No.GNDEC/TCC/B/{{pro_no}}</div>
+<div align="right">Date : {{proforma_bill.date}}</div><br>
+<div align="left">To <br> {{proforma_bill.name}}<br>{{proforma_bill.address}}</div>
+<br>
+<div >Ref : Your letter No.  {{proforma_bill.ref_no}}</div>
+
+<div>
+<table border="1" width="100%">
+	<tr>
+		<td> Details</td>
+		<td> Per.</td>
+		<td> Rate</td>
+		<td> Amount</td>
+	</tr>
+	<tr>
+		<td > <b>Charges for {{proforma_bill.charges_for}}</b></td>
+		<td rowspan=\"2\"></td>
+		<td rowspan=\"2\" align="right"></td>
+		<td rowspan=\"2\" align="right"></td>
+
+	</tr>
+	<tr>
+		<td rowspan=\"1\"> <b>Site :{{proforma_bill.site}}</b></td>
+		<td rowspan=\"6\"></td>
+		
+	<tr>
+	<td ><b> {{proforma_bill.sample}} </b></td> 
+	<td align="right">each</td>
+		<td align="right">{{proforma_bill.rate}}.00</td>
+		<td align="right">{{proforma_bill.amount}}.00</td>
+	</tr>
+	</tr>
+		<td> Transpotation Charges</td>
+		<td rowspan=\"6\"></td>
+		<td rowspan=\"6\"></td>
+		<td align="right">{{proforma_bill.transpotation}}.00</td>
+	<tr>
+		<td>Service tax  @ "{{servicetaxprint}}% </td>
+		
+		<td align="right">{{proforma_tax.service_tax}}.00</td>
+	</tr>
+	
+	<tr>
+		<td> Education cess  @ {{educationtaxprint}}% </td>
+		<td align="right"> {{ proforma_tax.education_tax }} .00</td>
+	</tr>
+	<tr>
+		<td>Higher Education cess  @ {{ highereducationtaxprint }}% </td>
+		<td  align="right">{{ proforma_tax.higher_education_tax }}.00</td>
+	</tr>
+
+	<tr>
+		<td>Total Rs. <br>  ( Rupees {{net_total_eng }} only ) </td>
+		<td colspan="3" align="right">{{ proforma_tax.total }}.00</td>
+	</tr>
+</table>
+<br><br>
+<div align="left">
+<b>Note :</b>
+<br>
+1. Payment may be made vide D.D./cash in favour of Director, Guru Nanak dev Engg. College, Ludhiana.
+<br>
+2. The Testing/Work shall be done on Receipt of this payment.<br>
+3. {{proforma_bill.labour}}<br><br><br><br><br><br>
+<div align="right">DEAN {{ sub_title.name}}</div>
+<br>
+<div align="left">I/We here by agree to terms & conditions as mentioned above</div><br><br><br><br>
+<div align="right">(Signatrue of Client/Deptt. Representative) </div>
+</div>
+
+</body>
+</html>

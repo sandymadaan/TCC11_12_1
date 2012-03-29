@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+<html>
+<head>
+    <title>Gndec Ludhiana</title>
+</head>
+{% block content %}
+<body>
+Thanks, for Adding Client Job <br/>
+<br/><br/>
+<table border="2">
+<caption><center><b><h3>JOB NO. : {{maxid}}</h3></b> </center></caption>
+	<tr>
+		<td><center><a href="{{ LOCAL_URL }}/tcc11_12/automation/report_calculation/"><b> GENERAL REPORT</b></a></center>  </td>
+		<td><center><a href="{{ LOCAL_URL }}/tcc11_12/automation/suspence_calculation/"><b>SUSPENCE</b></a></center> </td>
+	</tr>
+	
+</table>
+
+
+</body>
+{% endblock %}

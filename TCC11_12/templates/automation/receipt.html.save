@@ -1,0 +1,15 @@
+<html>
+<head><title>Receipt</title></head>
+<body><center>{{ sub_title.name}}<br><h2>{{ title.name }}</h2>Accredited by NBA(AICTE),New Delhi <h3><b>RECEIPT</h3>  </b></center>
+<br/ient.receipt_no }}</div>
+<br/><br/><br/>
+<div align="left">Received a sum of Rs. {{ amount.net_total }} (Rupees  {{ net_total_eng }}only) from  <i> {{ client.name_and_address }} by {{ type }} {{suspence.type}} {{ suspence.check_number}}
+ {{suspence.check_dd_date }} on account of {{amount.field}}</div>
+<br/><br/>
+<div align="right"><b> Cashier</b></div>
+<br>
+<br>
+</body>
+</html>
+
+

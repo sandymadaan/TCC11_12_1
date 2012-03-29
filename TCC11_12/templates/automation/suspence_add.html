@@ -1,0 +1,26 @@
+{% load i18n %}
+<html>
+<head>
+    <title>GNDEC LUDHIANA</title>
+</head>
+{% block content %}
+<h3>JOB NO. : {{ maxid }} </h3>
+<br>
+{% if form1.errors %}
+        <p style="color: red;">
+            Please correct the error{{ form1.errors|pluralize }} below.
+        </p>
+    {% endif %}
+    <form action="" method="post">
+	{% csrf_token %}
+        <table>
+        <tr><th><label for="id_job_no"> Job no.</label></th><td><input type="text" name="job_no" id="id_job_no" /></td></tr>
+         <tr><th><label for="id_type">Payment Type</label></th><td><input type="text" name="type" id="id_type" /></td></tr>
+			<tr><th><label for="id_check_number"> Check Number</label></th><td><input type="text" name="check_number" id="id_check_number" /></td></tr>
+            <tr><th><label for="id_check_dd_date">DD/Check Date</label></th><td><input type="text" name="check_dd_date" id="id_check_dd_date" /></td></tr>
+        </table>
+        <input type="submit" value="Submit">
+    </form>
+
+</html>
+{% endblock %}

@@ -1,0 +1,42 @@
+<html>
+<head>
+    <title>{{lab}}</title>
+</head>
+<body>
+<div align="center"><h2>{{ title.name }}</h2><br>Description of {{field}} samples for {{start_date}} to {{end_date}}</div>
+<div>
+<table border="1" width="100%">
+	<tr>
+		<td><b>Receipt No.</b></td>
+		<td><b>Date</b></td>
+		<td><b>Name of Parties</b></td>
+		<td><b>Amount</b></td>
+		<td><b>Total Amount</b></td>
+	</tr>
+{% if client %}
+    {% for clients in client %}
+    {% for amounts in amount %}
+         {% if clients.job_no == amounts.job_no %}
+         <tr>
+			<td>{{ clients.receipt_no }}</td>
+			<td> {{ clients.date }}</td>
+			<td> {{clients.name_and_address}}</td>
+			<td>{{amounts.total}}</td>
+		        <td>{{amounts.net_total}}</td>
+		{% endif  %}	
+		</tr>
+        {% endfor %}
+        {% endfor %}
+{% endif  %}
+	<tr>
+         <td colspan='3'><center>SUM</center></td>
+         <td>{{total}}</td>
+         <td>{{net_total}}</td>
+        </tr>   
+</table>
+<br></br></br></br>
+</div>
+
+
+</body>
+		
