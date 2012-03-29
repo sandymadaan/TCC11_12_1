@@ -1,0 +1,36 @@
+DOCUMENTATION OF THE TCC PROJECT
+**************************************************
+ This documentation will enable any  person to run  the TCC software application on his/her laptop or PC based on the Linux operating system.
+----------------------------------------------------------------------------------------------------------------------------
+NOTE: 1. In this documentation replace the user name with the user name of your system.
+        2. For this application Django is already  installed in your PC (tested on version 1.2 and   1.3  )
+----------------------------------------------------------------------------------------------------------------------------
+1. First step to install the TCC11_12_1 software.Then, extract it and place the extracted folder in the home folder. One thing that should be kept in mind is that the name of the folder that was extract is the name used in the files contained by the folder.
+2. Then, open the extracted folder suppose the name of the folder is TCC.Open the TCC folder and make the changes in the apache folder and settings.py file.In apache folder there is a “django.wsgi” file which contains sys.path.append(‘/home/user name/’), in this give your user name.In settings.py file,where there is a user name and password, give the user name and the password of your phpmyadmin.
+Then, create a database of the same name as given in the settings.py file and give the path in TEMPLATE_DIRS = (“/home/username/“) in settings.py file of your templates of TCC application.
+3.Write the following command to go into the TCC project
+       $cd TCC11_12_1
+  Then, run the following command in order to create the tables in the database
+     / TCC $python manage.py syncdb
+4.In the tables created above in the database we have to drop two tables: automation_teachers and automation_variables. The procedure to drop the tables is : Select the tables that are to be dropped and at the end there is “with selected” click on this and select “drop” and then at the end on the right side there is “go”, click on “go”.After click on “go”,your selected tables was dropped.
+5. Now, we have to import the dropped tables: automation_teachers and automation_variable. And the procedure is : When you open the database of the TCC project, at the top, click on the import.
+Then, in order to import the tables browse the “tcc_11-12.sql” file.”tcc_11-12” file is given below and you have to copy it on the desktop first and then browse .Then, at the end there is “go”. Click on “go”.
+    http://202.164.53.122/~sandy/tcc_11-12.sql
+This will import the tables in your database.
+6. Then, run the following command in terminal.This command will let you go into the root.
+     $sudo -s
+After this at the screen that is visible to you is “#” this means now you are in the root now.
+Then run the following command:
+   #cd /etc/apache2/
+After this you will be in
+/etc/apache2# ls
+the ls command will show you the list of all the files in the apache2.
+Now, run the command  
+  # vim httpd.conf
+and edit the file, copy the media file from the file given below and paste it in the “httpd.conf” file and give your own path that you follow instead of the path given.
+     http://202.164.53.116/~parveen/tcc_files/httpd.conf
+7. One thing that should be kept in mind is that give the permissions 755 to TCC folder (project) by using the following command:
+    $sudo chmod 755 -R  /home/username/TCC11_12_1
+ in order to run the software on the localhost otherwise there will be an a error .
+In the command written above give the path of your own TCC folder.
+
